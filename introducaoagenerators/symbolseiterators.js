@@ -61,17 +61,32 @@ const obj = {
 };
 const it = obj[Symbol.iterator]()
 
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
+//console.log(it.next())
+//console.log(it.next())
+//console.log(it.next())
+//console.log(it.next())
+//console.log(it.next())
 
 for (let value of obj) {
-    console.log(value)
+  //  console.log(value)
 }
 
 // construir um spread
 
 const arr2 = [...obj]
-console.log(arr2)
+//console.log(arr2)
+
+// Generators
+function* hello() {
+    console.log('Hello');
+    yield 1;
+    console.log('From')
+    const value = yield 2;
+    //console.log('Function')
+    console.log(value)
+}
+
+const ite = hello();
+console.log(ite.next())
+console.log(ite.next())
+console.log(ite.next('Outside!'))
